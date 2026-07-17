@@ -9,10 +9,10 @@ async function main() {
     postListEl.innerHTML = postData.map(post => `
         <div class="post">
             <div class="post__title">
-                Post Title
+                ${user.postTitle}</
             </div>
             <p class="post__body">
-                Post Body
+                ${user.post}</
             </p>
         </div>
         `
