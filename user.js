@@ -1,11 +1,22 @@
-console.log(localStorage.getItem("id"));
+localStorage.getItem("id");
+const postListEl = document.querySelector('.post-list');
 
 async function main() {
     const id = localStorage.getItem("id")
     const posts = await fetch(`https://jsonplaceholder.typicode.com/posts?userId=${id}`)
     const postData = await posts.json();
 
-    console.log(postData)
+    postListEl.innerHTML = postData.map(post => `
+        <div class="post">
+            <div class="post__title">
+                Post Title
+            </div>
+            <p class="post__body">
+                Post Body
+            </p>
+        </div>
+        `
+    ).join('');
 }
 
-main()
+main();
