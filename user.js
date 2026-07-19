@@ -4,6 +4,7 @@ const id = localStorage.getItem("id");
 async function onSearchChange() {
     const id = event.target.value;
     renderPosts(id);
+    console.log(renderPosts);
 }
 
 async function renderPosts(id) {
